@@ -1,0 +1,310 @@
+/* * COLOR SETTINGS */
+
+@media (prefers-color-scheme: light) {
+	body {
+		--background-primary: #272b34;
+		--background-primary-alt: #20242b;
+		--background-secondary: #20242b;
+		--background-secondary-alt: #161a1f;
+		--background-accent: #000;
+		--background-modifier-border: #424958;
+	}
+}
+
+
+@media (prefers-color-scheme: dark) {
+	body {
+		--background-primary: #272b34;
+		--background-primary-alt: #20242b;
+		--background-secondary: #20242b;
+		--background-secondary-alt: #1a1e24;
+		--background-accent: #000;
+		--background-modifier-border: #424958;
+
+		--text-accent: #61afef;
+		--text-accent-hover: #69bafd;
+		--text-normal: #dcddde;
+		--text-muted: #888;
+		--text-faint: rgb(81, 86, 99);
+
+		--text-highlight-bg: rgba(255, 255, 0, 0.4);
+
+		--gray-1: #5C6370;
+		--gray-2: #abb2bf;
+		--red: #e06c75;
+		--orange: #d19a66;
+		--green: #98c379;
+		--aqua: #56b6c2;
+		--purple: #c678dd;
+		--blue: #61afef;
+		--yellow: #e5c07b;
+	}
+}
+
+
+
+
+
+body {
+
+	/* * FONT SETTINGS */
+	--font-text: "Inter";
+	font-feature-settings: "tnum", "case", "cv02", "cv03", "cv04", "cv07", "cv09", "cv08", "cv05", "calt";
+	font-variant-ligatures: none;
+	--font-heading: "Space Grotesk";
+	--font-monospace: "Space Mono";
+
+	/* * SIZE / PROPORTIONS SETTINGS */
+	--header_height_unitless: 64;
+	--header_height: calc(var(--header_height_unitless)*1px);
+	--sidebar_width: 250px;
+
+	/* * CUSTOM STLYES */
+	--separating_border: 1px solid var(--background-modifier-border);
+	--h2_border: 1px solid var(--gray-1);
+
+
+	background-color: var(--background-primary);
+	margin: 0%;
+	font-family: var(--font-text);
+	color: var(--text-normal);
+}
+
+
+
+#header {
+	position: sticky;
+	top: 0;
+	z-index: 999;
+
+	display: flex;
+
+	height: var(--header_height);
+
+	/* border: 2px solid red; */
+}
+
+#title {
+	width: var(--sidebar_width);
+	background-color: var(--background-secondary);
+	font-family: var(--font-monospace);
+	border-right: var(--separating_border);
+	border-bottom: var(--separating_border);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+#title_a {
+	color: var(--text-normal);
+	text-decoration: none;
+	font-size: 32px;
+	font-weight: bold;
+}
+
+.horizontal_flex_1{
+	flex: 1;
+	background-color: var(--background-secondary);
+	border-bottom: var(--separating_border);
+}
+
+/* * SEARCH start */
+#search {
+	flex: 1;
+	background-color: var(--background-secondary);
+	border-bottom: var(--separating_border);
+}
+
+#search_icon {
+	/* margin: 14px; */
+	padding: 16px;
+	border-bottom: var(--separating_border);
+	background-color: transparent;
+}
+
+.autocomplete {
+	/*the container must be positioned relative:*/
+	position: relative;
+	/* display: inline-block; */
+	display: flex;
+	height: var(--header_height);
+	background-color: var(--background-secondary);
+}
+
+.autocomplete:focus-within {
+	background-color: var(--background-secondary-alt);
+}
+
+input {
+	border: transparent;
+	border-bottom: var(--separating_border);
+	/* background-color: var(--background-secondary); */
+	background-color: transparent;
+	padding: 10px;
+	font-size: 20px;
+}
+
+input[type=text] {
+	/* background-color: var(--background-secondary); */
+	/* background-color: var(--aqua); */
+	color: var(--text-normal);
+	width: 100%;
+}
+
+input[type=text]:focus {
+	/* background-color: var(--background-secondary-alt); */
+	outline: none;
+}
+
+input[type=submit] {
+	/* background-color: DodgerBlue; */
+	color: #fff;
+}
+
+.autocomplete-items {
+	position: absolute;
+	border: var(--separating_border);
+	border-bottom: none;
+	border-top: none;
+	z-index: 99;
+	/*position the autocomplete items to be the same width as the container:*/
+	top: 100%;
+	left: 0;
+	right: 0;
+}
+
+.autocomplete-items div {
+	padding: 10px;
+	cursor: pointer;
+	background-color: var(--background-secondary-alt);
+	border-bottom: var(--separating_border);
+}
+
+.autocomplete-items div:hover {
+	/*when hovering an item:*/
+	background-color: var(--background-primary-alt);
+}
+
+.autocomplete-active {
+	/*when navigating through the items using the arrow keys:*/
+	/* background-color: DodgerBlue !important; */
+	color: var(--text-accent);
+}
+
+/* * SEARCH end */
+
+
+/* * SIDEBAR NAVIGATION start */
+
+#sidebar * {
+	transition: 0.2s ease-out;
+	/* TODO style the sidebar, then we should be ready for the python parser */
+}
+
+/* .collapsible {
+	background-color: #777;
+	color: white;
+	cursor: pointer;
+	padding: 18px;
+	width: 100%;
+	border: none;
+	text-align: left;
+	outline: none;
+	font-size: 15px;
+  }
+  
+  .active, .collapsible:hover {
+	background-color: #555;
+  }
+  
+  .content {
+	padding: 0 0 0 18px;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.2s ease-out;
+	background-color: #f1f1f1;
+  } */
+
+/* * SIDEBAR NAVIGATION end */
+
+
+#main {
+	display: flex;
+}
+
+
+#sidebar {
+	background-color: var(--background-secondary);
+	/* flex: 1; */
+	position: fixed;
+	width: var(--sidebar_width);
+	height: calc(100vh - var(--header_height)) !important;
+	/* height: 64px; */
+	overflow: auto;
+	border-right: var(--separating_border);
+}
+
+/* * CONTENT FORMATTING */
+#content {
+	flex: 1;
+	margin-left: var(--sidebar_width);
+	background-color: var(--background-primary);
+	padding: 32px;
+	padding-top: 12px;
+}
+
+h1 {
+	font-weight: 300;
+}
+
+h2 {
+	border-bottom: var(--h2_border);
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 600;
+}
+
+blockquote {
+	background-color: var(--background-primary-alt);
+	padding: 4px 32px;
+	border-radius: 8px;
+}
+
+a {
+	color: var(--text-accent);
+}
+
+a:hover {
+	color: var(--text-accent-hover);
+}
+
+strong {
+	font-weight: bold;
+}
+
+
+/* * TABLE */
+
+table {
+	border-collapse: collapse;
+	/* background-color: var(--background-primary-alt); */
+	box-shadow: 5px 5px 5px var(--background-primary-alt);
+}
+
+th{
+	font-weight: bolder;
+}
+
+th,
+td {
+	margin: 0%;
+	padding: 4px 8px;
+	border: 1px solid var(--background-modifier-border);
+}

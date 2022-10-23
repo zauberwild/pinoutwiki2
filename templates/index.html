@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>PinoutWiki2</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="jquery-3.6.1.min.js"></script>
+	<script src="listCollapse.js"></script>
+	<script src="script.js"></script>
+	<script src="sites.js"></script>
+</head>
+
+<body>
+	<div id="header">
+		<div id="title">
+			<p>
+				<a id="title_a" href="./index.html">PinoutWiki2</a>
+			</p>
+		</div>
+		<!-- <span class="horizontal_flex_1"></span> -->
+		<div id="search" style="width: 500px;">
+			<form autocomplete="off" action="/action_page.php">
+				<div class="autocomplete">
+					<img src="./assets/search_dark.svg" id="search_icon" , class="svg_dark">
+					<input id="myInput" type="text" name="myCountry" placeholder="Search PinoutWiki2">
+					<script>
+						autocomplete(document.getElementById("myInput"), articles, links);
+					</script>
+				</div>
+				<!-- <input type="submit"> -->
+			</form>
+		</div>
+	</div>
+	<div id="main">
+		<div id="sidebar">
+			<ul id="sidebarList">
+				<li>Book 1
+				  <ul>
+					<li><a href="someHref">Chapter 1</a></li>
+					<li><a href="someHref">Chapter 2</a></li>
+					<li><a href="someHref">Chapter 3</a></li>
+					<li><a href="someHref">Chapter 4</a></li>
+				  </ul>
+				</li>
+				<li>Book 2
+				  <ul>
+					<li><a href="someHref">Chapter 1</a></li>
+					<li><a href="someHref">Chapter 2</a></li>
+					<li>Chapter 3
+					  <ul>
+						<li><a href="listCollapseExample.html">Ex 1</a></li>
+						<li><a href="someHref">Ex 2</a></li>
+					  </ul>
+					</li>
+					<li><a href="javascript:notA();">Chapter 4</a></li>
+				  </ul>
+				</li>
+				<li>Book 3
+				  <ul>
+					<li><a href="someHref">Chapter 1</a></li>
+					<li><a href="someHref">Chapter 2</a></li>
+					<li><a href="someHref">Chapter 3</a></li>
+					<li><a href="someHref">Chapter 4</a></li>
+				  </ul>
+				</li>
+			  </ul>
+		</div>
+
+		<div id="content">
+
+			<h1 id='serial-peripheral-interface'>Serial Peripheral Interface</h1>
+			<blockquote>
+				<p>→ <a href='https://de.wikipedia.org/wiki/Serial_Peripheral_Interface'>Wikipedia</a></p>
+			</blockquote>
+			<h2 id='color-code'>Color Code</h2>
+			<figure>
+				<table>
+					<thead>
+						<tr>
+							<th>Line</th>
+							<th>Usage</th>
+							<th>Color</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><strong>SCLK</strong></td>
+							<td>Clock</td>
+							<td>⚪ Weiß</td>
+						</tr>
+						<tr>
+							<td><strong>COPI</strong></td>
+							<td>Controller Out, Peripheral In<br>(MOSI, <em>master out, slave in</em>)</td>
+							<td>🟢 Grün</td>
+						</tr>
+						<tr>
+							<td><strong>CIPO</strong></td>
+							<td>Controller In, Peripheral Out<br>(MISO, <em>master in, slave out</em>)</td>
+							<td>🔵 Blau</td>
+						</tr>
+						<tr>
+							<td><strong>CS</strong></td>
+							<td>Chip-Select, je eine pro Peripherie <br><em>(auch: SS - Slave Select; STE - Slave
+									Transmit Enable; CE - Chip Enabler )</em></td>
+							<td>🟡 Gelb</td>
+						</tr>
+					</tbody>
+				</table>
+			</figure>
+			<p>&nbsp;</p>
+			<p><strong>Web:</strong></p>
+			<ul>
+				<li>What Could Go Wrong: SPI: <a
+						href='https://hackaday.com/2016/07/01/what-could-go-wrong-spi/'>Hackaday</a></li>
+
+			</ul>
+			<h2 id='raspberry-pi'>Raspberry Pi</h2>
+			<p><strong>Web:</strong></p>
+			<ul>
+				<li><a href='https://blog.stabel.family/raspberry-pi-4-multiple-spis-and-the-device-tree/'>Raspberry Pi
+						4 - Multiple SPIs</a></li>
+				<li>documentation for python library <code>spidev</code>: <a
+						href='https://www.sigmdel.ca/michel/ha/rpi/dnld/draft_spidev_doc.pdf'>PDF</a></li>
+
+			</ul>
+			<p>&nbsp;</p>
+
+		</div>
+	</div>
+
+	<script src="collapsible.js"></script>
+</body>
+
+</html>
